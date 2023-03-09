@@ -183,28 +183,42 @@
         }
 
 
-        #login
-        {
-            width: 100vw;
-            height: 40vh;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
         #login input
         {
+            text-align: center;
+            padding: 0.3em;
+            border: thin solid #DCD6F7;
+            border-radius: 1em;
+            box-shadow: 0 2px #DCD6F7;
             display: block;
             width: 50%;
+            max-width: 19em;
             height: 2em;
             margin: auto;
             margin-top: 2em;
         }
-        #login button 
+        #login button
         {
-            display: block;
-            margin: auto;
-            margin-top: 2em;
-            padding: 1em;
+            position: absolute;
+            bottom: 2em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50vw;
+            max-width: 17em;
+            height: 3em;
+            border-radius: 1.1em;
+            color: #F4EEFF;
+            background-color: #A6B1E1;
+            box-shadow: 0 2px #DCD6F7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+        #login button:first-of-type
+        {
+            bottom: 6em;
+            color: #424874;
+            background-color: #DCD6F7;
+            box-shadow: 0 2px #A6B1E1;
         }
 
         #register input
@@ -300,12 +314,12 @@
     
     <div id="cutscene"></div>
 
-    <!--div id="welcome">
+    <div id="welcome">
         <h1>بالانس، هرآنچه برای تناسب اندام نیاز دارید</h1>
         <div id="logo"></div>
-        <button onclick="loginorsignin()">ثبت نام</button>
-        <button onclick="loginorsignin()">ورود</button>
-    </div-->
+        <button onclick="signin()">ثبت نام</button>
+        <button onclick="login()">ورود</button>
+    </div>
 
     <!--div id="content">
         <div id="home">
@@ -445,23 +459,30 @@
     </div-->
 
 
-    <!--div id="login">
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <button>Submit</button>
-        <button>First time ?</button>
-    </div-->
-
-    <div id="register">
-        <input id="username" type="text" placeholder="نام کاربری">
-        <input id="email" type="text" placeholder="ایمیل">
-        <input id="pword" type="password" placeholder="رمز عبور">
-        <input type="password" placeholder="تکرار رمز عبور">
-        <button onclick="testget()">ساخت حساب</button>
-        <button>از قبل حساب دارید؟ ورود</button>
+    <div id="login-bp" style="display: none;">
+    
+        <div id="login">
+            <input id="username" type="text" placeholder="نام کاربری">
+            <input id="pword" type="password" placeholder="رمز عبور">
+            <button>ورود</button>
+            <button>فراموشی رمز عبور</button>
+        </div>
+    
     </div>
 
 
+    <div id="signin-bp" style="display: none;">
+
+        <div id="register">
+            <input id="username" type="text" placeholder="نام کاربری">
+            <input id="email" type="text" placeholder="ایمیل">
+            <input id="pword" type="password" placeholder="رمز عبور">
+            <input type="password" placeholder="تکرار رمز عبور">
+            <button onclick="testget()">ساخت حساب</button>
+            <button onclick="login()">از قبل حساب دارید؟ ورود</button>
+        </div>
+
+    </div>
 
 
 
@@ -470,7 +491,7 @@
 <script src="jquery-3.6.3.min.js"></script>
 <script>
 
-    function loginorsignin() 
+    function signin() 
     {
         const cuter = document.getElementById("cutscene");
 
@@ -479,13 +500,36 @@
         setTimeout(() => {
             const tst = document.getElementById("welcome");
             tst.remove();
+
+            const signinbp = document.getElementById("signin-bp");
+            document.body.innerHTML += signinbp.innerHTML;
         }, 1000);
 
         setTimeout(() => {
-            cuter.style = "width:0; height:0";
+            const cuterr = document.getElementById("cutscene");
+            cuterr.style = "width:0; height:0";
         }, 1200);
     }
 
+    function login() 
+    {
+        const cuter = document.getElementById("cutscene");
+
+        cuter.style = "width:200vh; height:200vh";
+
+        setTimeout(() => {
+            const tst = document.getElementById("welcome");
+            tst.remove();
+
+            const loginbp = document.getElementById("login-bp");
+            document.body.innerHTML += loginbp.innerHTML;
+        }, 1000);
+
+        setTimeout(() => {
+            const cuterr = document.getElementById("cutscene");
+            cuterr.style = "width:0; height:0";
+        }, 1200);
+    }
 
     const postcaption = 
     [
