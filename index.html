@@ -10,8 +10,101 @@
     <style>
         body
         {
-            background-color: #EEE9DA;
+            background-color: #F4EEFF;
             overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        button
+        {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
+        #logo
+        {
+            width: 2em;
+            height: 2em;
+            background-color: #424874;
+            margin: 4em auto;
+            animation: spin 1.5s infinite;
+        }
+        @keyframes spin 
+        {
+            0%
+            {
+                transform: rotate(0);
+                border-radius: 0;
+            }    
+            50%
+            {
+                border-radius: 0.6em;
+            }
+            100%
+            {
+                border-radius: 0;
+                transform: rotate(180deg);
+            }
+        }
+        #welcome h1
+        {
+            color: #424874;
+            font-size: x-large;
+            margin-top: 1em;
+            text-shadow: 0px 2px #A6B1E1;
+            font-weight: 900;
+        }
+        #welcome button
+        {
+            position: absolute;
+            bottom: 2em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50vw;
+            max-width: 17em;
+            height: 3em;
+            border-radius: 1.1em;
+            color: #424874;
+            background-color: #DCD6F7;
+            box-shadow: 0 2px #A6B1E1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+        #welcome button:first-of-type
+        {
+            bottom: 6em;
+            color: #F4EEFF;
+            background-color: #A6B1E1;
+            box-shadow: 0 2px #DCD6F7;
+
+        }
+
+        #cutscene
+        {
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background-color: #424874;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            transition: 1s;
+        }
+        .in
+        {
+            width: 200vh;
+            height: 200vh;
+        }
+        .out
+        {
+            width: 0;
+            height: 0;
         }
 
         #navbar
@@ -88,6 +181,116 @@
             top: 1em;
             left: 1em;
         }
+
+
+        #login
+        {
+            width: 100vw;
+            height: 40vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #login input
+        {
+            display: block;
+            width: 50%;
+            height: 2em;
+            margin: auto;
+            margin-top: 2em;
+        }
+        #login button 
+        {
+            display: block;
+            margin: auto;
+            margin-top: 2em;
+            padding: 1em;
+        }
+
+        #register input
+        {
+            text-align: center;
+            padding: 0.3em;
+            border: thin solid #DCD6F7;
+            border-radius: 1em;
+            box-shadow: 0 2px #DCD6F7;
+            display: block;
+            width: 50%;
+            max-width: 19em;
+            height: 2em;
+            margin: auto;
+            margin-top: 2em;
+        }
+        #register button
+        {
+            position: absolute;
+            bottom: 2em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50vw;
+            max-width: 17em;
+            height: 3em;
+            border-radius: 1.1em;
+            color: #F4EEFF;
+            background-color: #A6B1E1;
+            box-shadow: 0 2px #DCD6F7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+        #register button:first-of-type
+        {
+            bottom: 6em;
+            color: #424874;
+            background-color: #DCD6F7;
+            box-shadow: 0 2px #A6B1E1;
+        }
+
+
+
+        #diets
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+        #diets #header-diet
+        {
+            width: 100vw;
+            height: 8em;
+            background-color: #6096B4;
+        }
+        #header-diet h2
+        {
+            margin: 0;
+        }
+        #diets #horizontal-diet-slider
+        {
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            height: 8em;
+            background-color: pink;
+            margin-top: 2em;
+        } 
+        #horizontal-diet-slider table
+        {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+            overflow-x: scroll;
+        }
+        #horizontal-diet-slider th
+        {
+            width: 12em;
+            height: 2em;
+            background-color: red;
+            padding: 1em;
+            border: 3px solid white;
+            border-collapse: collapse;
+        }
     </style>
 
 
@@ -95,51 +298,206 @@
 
 <body>
     
-    <div id="content">
+    <div id="cutscene"></div>
+
+    <!--div id="welcome">
+        <h1>بالانس، هرآنچه برای تناسب اندام نیاز دارید</h1>
+        <div id="logo"></div>
+        <button onclick="loginorsignin()">ثبت نام</button>
+        <button onclick="loginorsignin()">ورود</button>
+    </div-->
+
+    <!--div id="content">
         <div id="home">
 
             
 
-            <div class="post" onclick="showpost()">
+            <div class="post" onclick="showpost(0)">
                 <img src="./post.jpg" alt="post placeholder">
-                <h2>Post title</h2>     
+                <h2>Post 1</h2>     
             </div>
-            <div class="post" onclick="showpost()">
+            <div class="post" onclick="showpost(1)">
                 <img src="./post.jpg" alt="post placeholder">
-                <h2>Post title</h2>     
+                <h2>Post 2</h2>     
             </div>
-            <div class="post" onclick="showpost()">
+            <div class="post" onclick="showpost(2)">
                 <img src="./post.jpg" alt="post placeholder">
-                <h2>Post title</h2>
+                <h2>Post 3</h2>
             </div>
-            <div class="post" onclick="showpost()">
+            <div class="post" onclick="showpost(3)">
                 <img src="./post.jpg" alt="post placeholder">
-                <h2>Post title</h2>
+                <h2>Post 4</h2>
             </div>
-            <div class="post" onclick="showpost()">
+            <div class="post" onclick="showpost(4)">
                 <img src="./post.jpg" alt="post placeholder">
-                <h2>Post title</h2>
+                <h2>Post 5</h2>
             </div>
-            <div class="post" onclick="showpost()">
+            <div class="post" onclick="showpost(5)">
                 <img src="./post.jpg" alt="post placeholder">
-                <h2>Post title</h2>     
+                <h2>Post 6</h2>     
             </div>
 
         </div>
+    </div-->
+
+    <!--div id="diets">
+        <div id="header-diet">
+            <h2>standard diet</h2>
+        </div>
+
+        <div id="horizontal-diet-slider">
+            <table>
+                <tr>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                  </tr>
+            </table>
+        </div>
+
+        <div id="horizontal-diet-slider">
+            <table>
+                <tr>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                  </tr>
+            </table>
+        </div>
+
+        <div id="horizontal-diet-slider">
+            <table>
+                <tr>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                  </tr>
+            </table>
+        </div>
+
+        <div id="horizontal-diet-slider">
+            <table>
+                <tr>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                  </tr>
+            </table>
+        </div>
+
+        <div id="horizontal-diet-slider">
+            <table>
+                <tr>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                </tr>
+            </table>
+        </div>
     </div>
+
 
     <div id="navbar">
         <button>Profile</button>
         <button>Home</button>
         <button>Diets</button>
+    </div-->
+
+
+    <!--div id="login">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button>Submit</button>
+        <button>First time ?</button>
+    </div-->
+
+    <div id="register">
+        <input id="username" type="text" placeholder="نام کاربری">
+        <input id="email" type="text" placeholder="ایمیل">
+        <input id="pword" type="password" placeholder="رمز عبور">
+        <input type="password" placeholder="تکرار رمز عبور">
+        <button onclick="testget()">ساخت حساب</button>
+        <button>از قبل حساب دارید؟ ورود</button>
     </div>
+
+
+
 
 
 </body>
 
-
+<script src="jquery-3.6.3.min.js"></script>
 <script>
-    function showpost()     
+
+    function loginorsignin() 
+    {
+        const cuter = document.getElementById("cutscene");
+
+        cuter.style = "width:200vh; height:200vh";
+
+        setTimeout(() => {
+            const tst = document.getElementById("welcome");
+            tst.remove();
+        }, 1000);
+
+        setTimeout(() => {
+            cuter.style = "width:0; height:0";
+        }, 1200);
+    }
+
+
+    const postcaption = 
+    [
+        "this is one",
+        "this is two",
+        "this is three",
+        "this is four",
+        "this is five",
+        "this is six"
+    ]
+
+    function showpost(i)     
     {
         
         const home = document.getElementById("home");
@@ -154,8 +512,39 @@
             home.removeChild(postcontent);
         });
         postcontent.appendChild(backbutton);
+
+        const content = document.createElement("p");
+        postcontent.appendChild(content);
+        content.innerText = postcaption[i];
         home.appendChild(postcontent);
     }
+
+
+
+        
+        const testget = ()=>
+        {
+            
+            /*fetch("http://balancediet.pythonanywhere.com/")
+            .then((responseText) => document.body.innerHTML = responseText)
+            .then((json) => console.log(json));*/
+
+            $.ajax('http://balancediet.pythonanywhere.com/', {
+                type: 'POST',  // http method
+                data: {         state: "0",
+                                email: document.getElementById("email").value,
+                                username: document.getElementById("username").value,
+                                pword: document.getElementById("pword").value
+                        },  // data to submit
+                success: function (data, status, xhr) {
+                document.body.innerText = xhr.responseText;
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                            document.body.innerText = "SERVER ERROR";
+                }
+            });
+        
+        }
 </script>
 
 
