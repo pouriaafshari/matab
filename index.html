@@ -14,6 +14,12 @@
             overflow: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        body::-webkit-scrollbar
+        {
+            display: none;
         }
         button
         {
@@ -270,9 +276,15 @@
             top: 0;
             left: 0;
             width: 100vw;
-            height: 100vh;
+            height: 92vh;
             overflow-y: scroll;
             overflow-x: hidden;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        #diets::-webkit-scrollbar
+        {
+            display: none;
         }
         #diets #header-diet
         {
@@ -292,7 +304,13 @@
             height: 8em;
             background-color: pink;
             margin-top: 2em;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         } 
+        #diets #horizontal-diet-slider::-webkit-scrollbar
+        {
+            display: none;
+        }
         #horizontal-diet-slider table
         {
             border-collapse: collapse;
@@ -313,7 +331,7 @@
         #diet-recommendation
         {
             position: fixed;
-            bottom: 4.3em;
+            bottom: 9.5vh;
             left: 50%;
             transform: translateX(-50%);
             background-color: #424874;
@@ -332,18 +350,54 @@
             top: 0;
             left: 0;
             width: 100vw;
-            height: 100vh;
+            height: 92vh;
             overflow-y: scroll;
             overflow-x: hidden;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        #recepies::-webkit-scrollbar
+        {
+            display: none;
         }
         #recepies #horizontal-recepies-slider
         {
+            position: relative;
             overflow-x: auto;
-            flex-wrap: nowrap;
-            height: 8em;
             background-color: pink;
-            margin-top: 2em;
+            margin-top: 0.5em;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         } 
+        #recepies #horizontal-recepies-slider::-webkit-scrollbar
+        {
+            display: none;
+        }
+        .topics
+        {
+            width: 100vw;
+            height: 3em;
+            margin: 0;
+            position: relative;
+            padding-top: 0.2em;
+            margin-top: 1em;
+        }
+        #recepies h2
+        {
+            color: #424874;
+            position: absolute;
+            margin: 0;
+            left: 0.5em;
+            line-height: 2em;
+        }
+        #recepies u
+        {
+            color: #424874;
+            position: absolute;
+            right: 1.5em;
+            margin: 0;
+            line-height: 3em;
+        }
         #horizontal-recepies-slider table
         {
             border-collapse: collapse;
@@ -354,12 +408,18 @@
         }
         #horizontal-recepies-slider th
         {
-            width: 12em;
             height: 2em;
             background-color: red;
-            padding: 1em;
             border: 3px solid white;
             border-collapse: collapse;
+        }
+        #horizontal-recepies-slider th img
+        {
+            width: 9em;
+        }
+        #horizontal-recepies-slider th h2
+        {
+            
         }
     </style>
 
@@ -411,8 +471,9 @@
     </div-->
 
     <div id="tab">
+        
 
-        <!--div id="diets">
+        <div id="diets">
             <div id="header-diet">
                 <h2>standard diet</h2>
             </div>
@@ -509,31 +570,11 @@
             </div>
         </div>
 
-        <button id="diet-recommendation">کدام رژیم برای من مناسب است؟</button-->
+        <button id="diet-recommendation">کدام رژیم برای من مناسب است؟</button>
             
-
-        <div id="recepies">
-
-            <div id="horizontal-recepies-slider">
-                <table>
-                    <tr>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                        <th>Points</th>
-                      </tr>
-                </table>
-            </div>
-    
         </div>
+
+
     </div>
 
 
@@ -564,6 +605,308 @@
             <input type="password" placeholder="تکرار رمز عبور">
             <button onclick="testget()">ساخت حساب</button>
             <button onclick="login()">از قبل حساب دارید؟ ورود</button>
+        </div>
+
+    </div>
+
+
+    <div id="recepiestab-bp" style="display:none;">
+
+        <div id="recepies">
+
+            <div class="topics">
+                <h2>Breakfast</h2>
+                <u>see all</u>
+            </div>
+            <div id="horizontal-recepies-slider">
+                <table>
+                    <tr>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                      </tr>
+                </table>
+            </div>
+
+
+            
+
+            <div class="topics">
+                <h2>Breakfast</h2>
+                <u>see all</u>
+            </div>
+            <div id="horizontal-recepies-slider">
+                <table>
+                    <tr>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                      </tr>
+                </table>
+            </div>
+
+
+
+            <div class="topics">
+                <h2>Breakfast</h2>
+                <u>see all</u>
+            </div>
+            <div id="horizontal-recepies-slider">
+                <table>
+                    <tr>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                      </tr>
+                </table>
+            </div>
+
+
+            <div class="topics">
+                <h2>Breakfast</h2>
+                <u>see all</u>
+            </div>
+            <div id="horizontal-recepies-slider">
+                <table>
+                    <tr>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <img src="./post.jpg" alt="placeholder">
+                                <h3>Lorem ipsom</h3>
+                                <p>4444 kcal</p>
+                            </div>
+                        </th>
+                      </tr>
+                </table>
+            </div>
+
+    </div>
+
+    <div id="dietstab-bp" style="display: none;">
+
+        <div id="diets">
+            <div id="header-diet">
+                <h2>standard diet</h2>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                      </tr>
+                </table>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                      </tr>
+                </table>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                      </tr>
+                </table>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                      </tr>
+                </table>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <button id="diet-recommendation">کدام رژیم برای من مناسب است؟</button>
+            
         </div>
 
     </div>
@@ -623,6 +966,10 @@
             document.getElementById("recepiestab").style = "";
             elem.style = "background-color: #A6B1E1; border-top: thin solid #424874;";
             is_diets_tab = true;
+            
+            const tab = document.getElementById("tab");
+
+            tab.innerHTML = document.getElementById("dietstab-bp").innerHTML;
         }
     }
     function recepiestab(elem)
@@ -632,9 +979,12 @@
             document.getElementById("dietstab").style = "";
             elem.style = "background-color: #A6B1E1; border-top: thin solid #424874;";
             is_diets_tab = false;
+
+            const tab = document.getElementById("tab");
+
+            tab.innerHTML = document.getElementById("recepiestab-bp").innerHTML;
         }
     }
-
 
 
     const postcaption = 
