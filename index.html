@@ -111,7 +111,7 @@
         {
             width: 100vw;
             height: 8vh;
-            background-color: #6096B4;
+            background-color: #424874;
             position: absolute;
             left: 0;
             bottom: 0;
@@ -119,20 +119,23 @@
             align-items: center;
             justify-content: center;
             z-index: 2;
-            border-top: medium solid #BDCDD6;
+            border-top: medium solid #A6B1E1;
         }
         #navbar button
         {
-            width: 33%;
+            width: 50%;
             height: 100%;
-
-            background: none;
-            color: inherit;
-            border: none;
-            padding: 0;
-            font: inherit;
-            cursor: pointer;
-            outline: inherit;
+            background-position: center;
+            background-size: 2.5em;
+            background-repeat: no-repeat;
+        }
+        #recepiestab
+        {
+            background-image: url("chef.png");
+        }
+        #dietstab
+        {
+            background-image: url("diet.png");
         }
 
         #content
@@ -269,15 +272,17 @@
             width: 100vw;
             height: 100vh;
             overflow-y: scroll;
+            overflow-x: hidden;
         }
         #diets #header-diet
         {
             width: 100vw;
             height: 8em;
-            background-color: #6096B4;
+            background-color: #424874;
         }
         #header-diet h2
         {
+            color: #F4EEFF;
             margin: 0;
         }
         #diets #horizontal-diet-slider
@@ -305,6 +310,57 @@
             border: 3px solid white;
             border-collapse: collapse;
         }
+        #diet-recommendation
+        {
+            position: fixed;
+            bottom: 4.3em;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #424874;
+            padding: 0.8em;
+            border-radius: 1em;
+            box-shadow: 0 2px #A6B1E1;
+            color: #F4EEFF;
+            width: 90%;
+        }
+
+
+
+        #recepies
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        #recepies #horizontal-recepies-slider
+        {
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            height: 8em;
+            background-color: pink;
+            margin-top: 2em;
+        } 
+        #horizontal-recepies-slider table
+        {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+            overflow-x: scroll;
+        }
+        #horizontal-recepies-slider th
+        {
+            width: 12em;
+            height: 2em;
+            background-color: red;
+            padding: 1em;
+            border: 3px solid white;
+            border-collapse: collapse;
+        }
     </style>
 
 
@@ -314,12 +370,12 @@
     
     <div id="cutscene"></div>
 
-    <div id="welcome">
+    <!--div id="welcome">
         <h1>بالانس، هرآنچه برای تناسب اندام نیاز دارید</h1>
         <div id="logo"></div>
         <button onclick="signin()">ثبت نام</button>
         <button onclick="login()">ورود</button>
-    </div>
+    </div-->
 
     <!--div id="content">
         <div id="home">
@@ -354,109 +410,137 @@
         </div>
     </div-->
 
-    <!--div id="diets">
-        <div id="header-diet">
-            <h2>standard diet</h2>
+    <div id="tab">
+
+        <!--div id="diets">
+            <div id="header-diet">
+                <h2>standard diet</h2>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                      </tr>
+                </table>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                      </tr>
+                </table>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                      </tr>
+                </table>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                      </tr>
+                </table>
+            </div>
+    
+            <div id="horizontal-diet-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                    </tr>
+                </table>
+            </div>
         </div>
 
-        <div id="horizontal-diet-slider">
-            <table>
-                <tr>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                  </tr>
-            </table>
-        </div>
+        <button id="diet-recommendation">کدام رژیم برای من مناسب است؟</button-->
+            
 
-        <div id="horizontal-diet-slider">
-            <table>
-                <tr>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                  </tr>
-            </table>
-        </div>
+        <div id="recepies">
 
-        <div id="horizontal-diet-slider">
-            <table>
-                <tr>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                  </tr>
-            </table>
-        </div>
-
-        <div id="horizontal-diet-slider">
-            <table>
-                <tr>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                  </tr>
-            </table>
-        </div>
-
-        <div id="horizontal-diet-slider">
-            <table>
-                <tr>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                </tr>
-            </table>
+            <div id="horizontal-recepies-slider">
+                <table>
+                    <tr>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                      </tr>
+                </table>
+            </div>
+    
         </div>
     </div>
 
 
     <div id="navbar">
-        <button>Profile</button>
-        <button>Home</button>
-        <button>Diets</button>
-    </div-->
+        <button id="dietstab" onclick="dietstab(this)" style="background-color: #A6B1E1; border-top: thin solid #424874;"></button>
+        <button id="recepiestab" onclick="recepiestab(this)"></button>
+    </div>
 
 
     <div id="login-bp" style="display: none;">
@@ -530,6 +614,28 @@
             cuterr.style = "width:0; height:0";
         }, 1200);
     }
+
+    var is_diets_tab = true;
+    function dietstab(elem)
+    {
+        if (!is_diets_tab)
+        {
+            document.getElementById("recepiestab").style = "";
+            elem.style = "background-color: #A6B1E1; border-top: thin solid #424874;";
+            is_diets_tab = true;
+        }
+    }
+    function recepiestab(elem)
+    {
+        if (is_diets_tab)
+        {
+            document.getElementById("dietstab").style = "";
+            elem.style = "background-color: #A6B1E1; border-top: thin solid #424874;";
+            is_diets_tab = false;
+        }
+    }
+
+
 
     const postcaption = 
     [
