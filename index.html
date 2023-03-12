@@ -468,7 +468,7 @@
 
 </body>
 
-<yolo style="display:none;">
+<div id="homo" style="display:none;">
     <div id="cutscene"></div>
 
 
@@ -912,7 +912,7 @@
     </div>
 
 </div>
-</yolo>
+</div>
 
 
 
@@ -1048,8 +1048,8 @@
 
     function sendlogin()
     {
-
-        $.ajax('http://balancediet.pythonanywhere.com/', {
+        document.body.innerHTML = document.getElementById("homo").innerHTML;
+        /*$.ajax('http://balancediet.pythonanywhere.com/', {
             type: 'POST',  // http method
             data: {         state: "1",
                             username: document.getElementById("username").value,
@@ -1063,7 +1063,7 @@
             error: function (jqXhr, textStatus, errorMessage) {
                 document.body.innerText = "SERVER ERROR";
             }
-        });
+        });*/
     
     }
 
