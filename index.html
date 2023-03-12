@@ -465,7 +465,9 @@
         </div>
 
     </div>
+    <div id="yolo">
 
+    </div>
 
 </body>
 
@@ -607,7 +609,7 @@
                             pword: document.getElementById("pword").value
                     },  // data to submit
             success: function (data, status, xhr) {
-                document.body.innerHTML = xhr.responseText;
+                document.getElementById("yolo").innerHTML = xhr.responseText;
             },
             error: function (jqXhr, textStatus, errorMessage) {
                 document.body.innerText = "SERVER ERROR";
