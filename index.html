@@ -1048,22 +1048,23 @@
 
     function sendlogin()
     {
-        document.body.innerHTML = document.getElementById("homo").innerHTML;
-        /*$.ajax('http://balancediet.pythonanywhere.com/', {
+        $.ajax('http://balancediet.pythonanywhere.com/', {
             type: 'POST',  // http method
             data: {         state: "1",
                             username: document.getElementById("username").value,
                             pword: document.getElementById("pword").value
                     },  // data to submit
             success: function (data, status, xhr) {
+                document.body.innerHTML = xhr.responseText;
+                
                 if (xhr.responseText == "NO"){
-                    document.body.innerHTML = document.getElementsByTagName("yolo")[0].innerHTML;
+                    //document.body.innerHTML = document.getElementById("homo").innerHTML;
                 }
             },
             error: function (jqXhr, textStatus, errorMessage) {
                 document.body.innerText = "SERVER ERROR";
             }
-        });*/
+        });
     
     }
 
