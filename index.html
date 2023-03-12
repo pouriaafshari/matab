@@ -1048,7 +1048,7 @@
 
     function sendlogin()
     {
-        $.ajax('http://balancediet.pythonanywhere.com/', {
+        $.ajax('https://balancediet.pythonanywhere.com/', {
             type: 'POST',  // http method
             data: {         state: "1",
                             username: document.getElementById("username").value,
@@ -1056,7 +1056,7 @@
                     },  // data to submit
             success: function (data, status, xhr) {
                 document.body.innerHTML = xhr.responseText;
-                
+
                 if (xhr.responseText == "NO"){
                     //document.body.innerHTML = document.getElementById("homo").innerHTML;
                 }
