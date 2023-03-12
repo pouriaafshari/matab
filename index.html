@@ -1034,7 +1034,9 @@
                             pword: document.getElementById("pword").value
                     },  // data to submit
             success: function (data, status, xhr) {
-                document.body.innerHTML = document.getElementsByTagName("yolo")[0].innerHTML;
+                if (xhr.responseText == "NO"){
+                    document.body.innerHTML = document.getElementsByTagName("yolo")[0].innerHTML;
+                }
             },
             error: function (jqXhr, textStatus, errorMessage) {
                 document.body.innerText = "SERVER ERROR";
@@ -1054,7 +1056,9 @@
                             pword: document.getElementById("pword").value
                     },  // data to submit
             success: function (data, status, xhr) {
-                document.getElementById("yolo").innerHTML = xhr.responseText;
+                if (xhr.responseText == "NO"){
+                    document.body.innerHTML = document.getElementsByTagName("yolo")[0].innerHTML;
+                }
             },
             error: function (jqXhr, textStatus, errorMessage) {
                 document.body.innerText = "SERVER ERROR";
